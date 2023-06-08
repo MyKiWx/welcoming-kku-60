@@ -246,7 +246,7 @@ export default function Home() {
           <Text color={"white"} textAlign="center">
             Developed by{" "}
             <a
-              href="/"
+              href="https://demo-chaiwat-webportfolio.vercel.app/"
               style={{ fontWeight: "bold", textDecoration: "underline" }}
             >
               ITSKYUQ
