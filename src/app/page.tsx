@@ -142,7 +142,7 @@ export default function Home() {
           <ModalCloseButton top={4} right={4} />
           <ModalBody>
             <Text>
-            ท่านกำลังใช้งานเว็บไซต์ผ่าน Browser ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน Broser ก่อนลงทะเบียน
+            ท่านกำลังใช้งานเว็บไซต์ผ่าน Browser ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน Browser เพื่อให้สามารถลงทะเบียนได้
             </Text>
             <Text fontSize={"md"} mt={4} color="#1d1d1f" fontWeight={600}>Browser ที่แนะนำ</Text>
             <HStack mt={2} spacing={4}>
