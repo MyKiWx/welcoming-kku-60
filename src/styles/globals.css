@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Kanit;
+}
+
+@font-face {
+  font-family: "Kanit";
+  src: url("/fonts/Kanit-Regular.woff2"),
+    url("/fonts/Kanit-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --main-color-200: #ffa666;
+  --main-color-400: #ff8833;
+  --main-color-500: #ff6a00;
+  --main-color-600: #cc5500;
+  --main-color-800: #994000;
+}
+
+.starParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 30px);
+  height: 100vh;
+  animation: animateBg 50s linear infinite;
+  z-index: 10;
+  /* user-select: none; */
+  overflow-x: hidden !important;
+}
+
+@keyframes animateBg {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.starChildren1,
+.starChildren2,
+.starChildren3,
+.starChildren4,
+.starChildren5,
+.starChildren6,
+.starChildren7,
+.starChildren8,
+.starChildren9 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: animate 3s linear infinite;
+  /* user-select: none; */
+  z-index: 10;
+}
+.starChildren1::before,
+.starChildren2::before,
+.starChildren3::before,
+.starChildren4::before,
+.starChildren5::before,
+.starChildren6::before,
+.starChildren7::before,
+.starChildren8::before,
+.starChildren9::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+  z-index: 10;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+.starChildren1 {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  z-index: 10;
+}
+.starChildren2 {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+  z-index: 10;
+}
+.starChildren3 {
+  top: 80;
+  right: 0px;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+  z-index: 10;
+}
+.starChildren4 {
+  top: 0;
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+  z-index: 10;
+}
+.starChildren5 {
+  top: 0;
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+  z-index: 10;
+}
+.starChildren6 {
+  top: 0;
+  right: 600px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  z-index: 10;
+}
+.starChildren7 {
+  top: 300px;
+  right: 0px;
+  left: initial;
+  animation-delay: 1.2s;
+  animation-duration: 1.75s;
+  z-index: 10;
+}
+.starChildren8 {
+  top: 0px;
+  right: 700px;
+  left: initial;
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+  z-index: 10;
+}
+.starChildren9 {
+  top: 0px;
+  right: 1000px;
+  left: initial;
+  animation-delay: 0.75s;
+  animation-duration: 2.25s;
+  z-index: 10;
+}
+.starChildren10 {
+  top: 0px;
+  right: 450px;
+  left: initial;
+  animation-delay: 2.75s;
+  animation-duration: 2.75s;
+  z-index: 10;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  /* scrollbar-color: rgb(167,59,36) #ffffff; */
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f8ccb8;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(167, 59, 36);
+  border-radius: 10px;
+  /* border: 2px solid white; */
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.gradient {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 20s ease-in-out infinite;
+  /* height: 100vh; */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.css-n3uhkm {
+  gap: 1px !important;
+}
+
+.css-n3uhkm {
+  align-self: flex-start !important;
+  margin-top: 6px !important;
+}
+
+/* Styles for screens smaller than 600px */
+@media screen and (max-width:30em) {
+  /* CSS rules for smaller screens */
+  .j-logo {
+    width: 96px;
+    height: 120px
+  }
+  .su-logo, .lu-logo {
+    width: 80px;
+    height: 80px;
+  }
+  .css-n3uhkm {
+    gap: 1px !important;
+  }
+}
+
+/* Styles for screens between 601px and 900px */
+@media screen and (min-width:30em) and (max-width: 96em) {
+  /* CSS rules for medium-sized screens */
+  .j-logo {
+    width: 120px;
+    height: 150px
+  }
+  .su-logo, .lu-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .css-n3uhkm {
+    gap: 0.5rem !important;
+  }
+}
