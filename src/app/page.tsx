@@ -17,7 +17,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import "./page.module.css";
 
@@ -125,42 +125,55 @@ export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    const browserType: string = navigator.userAgent
-    if (browserType.match(/fbmd/i) || browserType.match(/fbav/i) || browserType.match(/fbsn/i) || browserType.match(/line/i) || browserType.match(/instagram/i)){
-      onOpen()
+    const browserType: string = navigator.userAgent;
+    if (
+      browserType.match(/fbmd/i) ||
+      browserType.match(/fbav/i) ||
+      browserType.match(/fbsn/i) ||
+      browserType.match(/line/i) ||
+      browserType.match(/instagram/i)
+    ) {
+      onOpen();
     }
-  }, [])
-
+  }, []);
 
   return (
     <ChakraUiProvider>
       <Box as="main" px={4} py={{ base: 4, md: 8 }} position="relative">
-      <Modal isOpen={isOpen} onClose={onClose} size="md">
-        <ModalOverlay />
-        <ModalContent  borderRadius="2xl" p={2} pb={8}>
-          <ModalHeader fontSize={"2xl"} pb={2}>แจ้งเตือน</ModalHeader>
-          <ModalCloseButton top={4} right={4} />
-          <ModalBody>
-            <Text>
-            คุณกำลังใช้งานเว็บไซต์ผ่าน Browser ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน Browser เพื่อให้สามารถสร้าง E-Ticket ได้
-            </Text>
-            <Text fontSize={"md"} mt={4} color="#1d1d1f" fontWeight={600}>Browser ที่แนะนำ</Text>
-            <HStack mt={2} spacing={4}>
-            <Image src="/safari.png" alt="safari" width={10} h={10} />
-            <Image src="/microsoft.png" alt="safari" width={10} h={10} />
-            <Image src="/chrome.png" alt="safari" width={10} h={10} />
-            </HStack>
-            <Text fontSize={"md"} mt={6} color="#1d1d1f" fontWeight={400}>หรือกดเมนู &rdquo;Open in browser&rdquo;</Text>
-          </ModalBody>
-{/* 
+        <Modal isOpen={isOpen} onClose={onClose} size="md">
+          <ModalOverlay />
+          <ModalContent borderRadius="2xl" p={2} pb={8}>
+            <ModalHeader fontSize={"2xl"} pb={2}>
+              แจ้งเตือน
+            </ModalHeader>
+            <ModalCloseButton top={4} right={4} />
+            <ModalBody>
+              <Text>
+                คุณกำลังใช้งานเว็บไซต์ผ่าน Browser
+                ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน
+                Browser เพื่อให้สามารถสร้าง E-Ticket ได้
+              </Text>
+              <Text fontSize={"md"} mt={4} color="#1d1d1f" fontWeight={600}>
+                Browser ที่แนะนำ
+              </Text>
+              <HStack mt={2} spacing={4}>
+                <Image src="/safari.png" alt="safari" width={10} h={10} />
+                <Image src="/microsoft.png" alt="safari" width={10} h={10} />
+                <Image src="/chrome.png" alt="safari" width={10} h={10} />
+              </HStack>
+              <Text fontSize={"md"} mt={6} color="#1d1d1f" fontWeight={400}>
+                หรือกดเมนู &rdquo;Open in browser&rdquo;
+              </Text>
+            </ModalBody>
+            {/* 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
             <Button variant="ghost">Secondary Action</Button>
           </ModalFooter> */}
-        </ModalContent>
-      </Modal>
+          </ModalContent>
+        </Modal>
         {/* ANCHOR : Logo block */}
         <HStack
           w={"full"}
@@ -197,7 +210,17 @@ export default function Home() {
         <Container
           // ANCHOR : set width and height
           maxW={"500px"}
-          h={{ base: activeStep === 4 ? "700px" : activeStep === 3 ? "1000px" : activeStep === 2 ? "1100px" : "1250px", md: "1100px" }}
+          h={{
+            base:
+              activeStep === 4
+                ? "700px"
+                : activeStep === 3
+                ? "1000px"
+                : activeStep === 2
+                ? "1100px"
+                : "1250px",
+            md: "1100px",
+          }}
           bg="white"
           borderRadius="2xl"
           mt={{ base: 4, md: 8 }}
@@ -231,7 +254,14 @@ export default function Home() {
               href="https://www.facebook.com/kkustudentunion"
               style={{ fontWeight: "bold", textDecoration: "underline" }}
             >
-              KKUSU66 & LUEADSEEID
+              KKUSU66
+            </a>
+            &
+            <a
+              href="https://www.facebook.com/Leuadseeid.KKU"
+              style={{ fontWeight: "bold", textDecoration: "underline" }}
+            >
+              LUEADSEEID
             </a>
           </Text>
           <Text color={"white"} textAlign="center">

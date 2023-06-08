@@ -73,12 +73,14 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
           </Text>
 
           <Box h={{base: "200px", md: "200px"}} w={{base: "200px", md: "200px"}}>
+          <a href="https://lin.ee/AiB0hoP">
           <Image
             src={"/linesu.png"}
             alt={"line su"}
             h="full"
             borderRadius="lg"
           />
+          </a>
         </Box>
           </VStack>
           <HStack justifyContent={"space-between"} w={"100%"}>
