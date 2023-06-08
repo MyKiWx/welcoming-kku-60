@@ -352,7 +352,7 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
                 </Button>
               </VStack>
             </HStack>
-            <HStack mt={4}>
+            <HStack mt={4} display={{base: "none", md: "flex"}}>
               <Button
                 leftIcon={<FaFileDownload />}
                 onClick={() => handleDownloadTicketAll()}
