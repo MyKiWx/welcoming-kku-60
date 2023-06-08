@@ -46,8 +46,8 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
       <HStack display={activeStep == 3 ? "none" : "flex"}>
         {[1, 2, 3, 4, 5].map((i, _) => (
           <Box
-          w={{ base: 2, md: 6 }}
-          h={{base: 2, md: 1}}
+            w={{ base: 2, md: 6 }}
+            h={{ base: 2, md: 1 }}
             bg={activeStep >= i ? "blue.500" : "gray.200"}
             borderRadius="full"
             key={_}
@@ -215,15 +215,17 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
     return "";
   });
 
-  const [shuttle_bus_isChecked, setShuttle_bus_isChecked] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      const A = localStorage.getItem(`shuttle_bus_isChecked`);
-      if (A === "checked") {
-        return true;
+  const [shuttle_bus_isChecked, setShuttle_bus_isChecked] = useState<boolean>(
+    () => {
+      if (typeof window !== "undefined") {
+        const A = localStorage.getItem(`shuttle_bus_isChecked`);
+        if (A === "checked") {
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  });
+  );
   const getCountStudentFromServer = async () => {
     const studentRef = collection(CLOUD_FIRESTORE, "TicketNumber");
     const snapshot = await getCountFromServer(studentRef);
@@ -265,8 +267,10 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
       registered_date_type_2: Timestamp.fromDate(new Date())
         .toDate()
         .toLocaleString(),
-    })
-    .then(() => {
+      registered_date_type_3: Timestamp.fromDate(new Date())
+        .toDate()
+        .toUTCString(),
+    }).then(() => {
       setTimeout(() => {
         goToNext();
         stepOnClose();
@@ -282,7 +286,7 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
       ticket_B_code: event_B_isChecked ? ticket_B_code : "",
       ticket_C_code: event_C_isChecked ? ticket_C_code : "",
       ticket_D_code: event_D_isChecked ? ticket_D_code : "",
-    })
+    });
   };
   return (
     <>
@@ -302,13 +306,17 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
           <VStack w={"100%"} px={2}>
             {/* ANCHOR : Heading 1 */}
             <HStack w={"100%"}>
-              <Text fontWeight={600} fontSize={{base: "md", md: "lg"}} color={"#1d1d1f"}>
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "md", md: "lg" }}
+                color={"#1d1d1f"}
+              >
                 ข้อมูลของคุณ
               </Text>
             </HStack>
 
             {/* ANCHOR : Content 1 */}
-            <VStack w={"100%"} mt={1} spacing={0}>
+            <VStack w={"100%"} mt={1} spacing={1}>
               {[
                 {
                   title: "รหัสนักศึกษา",
@@ -339,16 +347,24 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   value: JSON.parse(student_congenital_disease),
                 },
               ].map((i, _) => (
-                <HStack w={"100%"} key={_}>
+                <HStack
+                  w={"100%"}
+                  key={_}
+                  justifyContent={{ base: "space-between", md: "flex-start" }}
+                >
                   <Text
                     fontWeight={500}
                     color="#1d1d1f"
-                    w={{base: "120px", md: "140px"}}
-                    fontSize={{base: "sm", md: "md"}}
+                    w={{ base: "120px", md: "150px" }}
+                    fontSize={{ base: "sm", md: "md" }}
                   >
                     {i.title}
                   </Text>
-                  <Text fontWeight={400} color={"#1d1d1f"}fontSize={{base: "sm", md: "md"}}>
+                  <Text
+                    fontWeight={400}
+                    color={"#1d1d1f"}
+                    fontSize={{ base: "sm", md: "md" }}
+                  >
                     {i.value}
                   </Text>
                 </HStack>
@@ -356,11 +372,15 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
             </VStack>
 
             {/* ANCHOR : Divider */}
-            <Divider my={{base: 2, md: 4}} />
+            <Divider my={{ base: 2, md: 4 }} />
 
             {/* ANCHOR : Heading 2 */}
             <HStack w={"100%"}>
-              <Text fontWeight={600} fontSize={{base: "md", md: "lg"}} color={"#1d1d1f"}>
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "md", md: "lg" }}
+                color={"#1d1d1f"}
+              >
                 กิจกรรมที่เลือกเข้าร่วม
               </Text>
             </HStack>
@@ -373,14 +393,14 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   color={event_A_isChecked ? "green.500" : "gray.300"}
                   alignSelf="flex-start"
                   mt={1}
-                  fontSize={{base: "md", md:"lg"}}
+                  fontSize={{ base: "md", md: "lg" }}
                 />
                 <Text
                   ml={2}
-                  fontSize={{base: "sm", md: "md"}}
+                  fontSize={{ base: "sm", md: "md" }}
                   color={event_A_isChecked ? "black" : "gray.300"}
                 >
-                  กิจกรรมโฮมมั่นขวัญแก่น ผูกแขนนักศึกษาใหม่ KKU Bye See 2023
+                  กิจกรรมโฮมมั่นขวัญแก่น ผูกแขนนักศึกษาใหม่ KKU BYE SEE 2023
                 </Text>
               </HStack>
               <HStack w={"100%"}>
@@ -389,11 +409,11 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   color={event_B_isChecked ? "green.500" : "gray.300"}
                   alignSelf="flex-start"
                   mt={1}
-                  fontSize={{base: "md", md:"lg"}}
+                  fontSize={{ base: "md", md: "lg" }}
                 />
                 <Text
                   ml={2}
-                  fontSize={{base: "sm", md: "md"}}
+                  fontSize={{ base: "sm", md: "md" }}
                   color={event_B_isChecked ? "#1d1d1f" : "gray.300"}
                 >
                   กิจกรรมร่วมใจผูกพัน สานสัมพันธ์ 60 ปี KKU สู่สังคม
@@ -405,14 +425,14 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   color={event_C_isChecked ? "green.500" : "gray.300"}
                   alignSelf="flex-start"
                   mt={1}
-                  fontSize={{base: "md", md:"lg"}}
+                  fontSize={{ base: "md", md: "lg" }}
                 />
                 <Text
                   ml={2}
-                  fontSize={{base: "sm", md: "md"}}
+                  fontSize={{ base: "sm", md: "md" }}
                   color={event_C_isChecked ? "#1d1d1f" : "gray.300"}
                 >
-                  กิจกรรมนักศึกษาใหม่ปุญน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง
+                  กิจกรรมนักศึกษาใหม่ปุญญฺน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง
                 </Text>
               </HStack>
               <HStack w={"100%"}>
@@ -421,11 +441,11 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   color={event_D_isChecked ? "green.500" : "gray.300"}
                   alignSelf="flex-start"
                   mt={1}
-                  fontSize={{base: "md", md:"lg"}}
+                  fontSize={{ base: "md", md: "lg" }}
                 />
                 <Text
                   ml={2}
-                  fontSize={{base: "sm", md: "md"}}
+                  fontSize={{ base: "sm", md: "md" }}
                   color={event_D_isChecked ? "#1d1d1f" : "gray.300"}
                 >
                   กิจกรรมมอขอร่วมใจ ตุ้มโฮมฮับนักศึกษาใหม่ สู่ขวัญถิ่นมอดินแดง
@@ -433,12 +453,16 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
               </HStack>
             </VStack>
             {/* ANCHOR : Divider */}
-            <Divider my={{base: 2, md: 4}} />
+            <Divider my={{ base: 2, md: 4 }} />
 
             {/* ANCHOR : Heading 2 */}
             <HStack w={"100%"}>
-              <Text fontWeight={600} fontSize={{base: "md", md: "lg"}} color={"#1d1d1f"}>
-              ต้องการใช้รถส่วนกลางสำหรับเดินทางกลับหรือไม่?
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "md", md: "lg" }}
+                color={"#1d1d1f"}
+              >
+                ต้องการใช้รถส่วนกลางสำหรับเดินทางกลับหรือไม่?
               </Text>
             </HStack>
 
@@ -450,11 +474,11 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   color={shuttle_bus_isChecked ? "green.500" : "gray.300"}
                   alignSelf="flex-start"
                   mt={1}
-                  fontSize={{base: "md", lg: "lg"}}
+                  fontSize={{ base: "md", lg: "lg" }}
                 />
                 <Text
                   ml={2}
-                  fontSize={{base: "sm", md: "md"}}
+                  fontSize={{ base: "sm", md: "md" }}
                   color={shuttle_bus_isChecked ? "black" : "gray.300"}
                 >
                   ต้องการ
@@ -468,6 +492,7 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
               onClick={goToPrevious}
               size={{ base: "sm", md: "md" }}
               w={20}
+              py={6}
             >
               ก่อนหน้า
             </Button>
@@ -478,7 +503,7 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
               isLoading={stepIsOpen}
               size={{ base: "sm", md: "md" }}
               onClick={() => handleDelayedClick()}
-
+              py={6}
             >
               ยืนยันการลงทะเบียน
             </Button>

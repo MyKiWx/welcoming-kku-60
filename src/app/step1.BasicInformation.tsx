@@ -192,13 +192,6 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
     }
   }, []);
 
-
-
-  useEffect(() => {
-    console.log(navigator.userAgent)
-  } , [])
-
-
   return (
     <>
       {!pageLoading && (
@@ -285,7 +278,7 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
                                 <PinInputField />
                                 <Box
                                   border="none"
-                                  display={{ base: "flex", md: "flex" }}
+                                  display={{ base: "none", md: "flex" }}
                                   alignItems="center"
                                   justifyContent="center"
                                   color="#A0AEC0"
@@ -300,7 +293,7 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
                               name="student_id"
                               component={FormErrorMessage}
                             />
-                            <FormHelperText fontSize={"sm"} color="gray.500">
+                            <FormHelperText fontSize={{base: "xs", md: "sm"}} color="gray.500">
                               *สำหรับนักศึกษาที่ยังไม่ได้รับรหัสนักศึกษา ให้กรอก
                               6600000000
                             </FormHelperText>
@@ -493,18 +486,23 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
                       <FormLabel size={{ base: "sm", md: "md" }}>
                         นโยบายด้านความปลอดภัย
                       </FormLabel>
-                      <FormHelperText fontSize={"sm"} color="gray.500" mt={"-4px"}>
-                          ยินยอมให้จัดเก็บข้อมูลเพื่อใช้ประโยชน์ในการจัดกิจกรรมรวมทั้งอนุญาตให้ถ่ายภาพนิ่ง
-                          ภาพเคลื่อนไหวหรือการถ่ายทอดสด
-                          เพื่อใช้ในการประชาสัมพันธ์และเผยแพร่ทางช่องทางการสื่อสารต่าง
-                          ๆ
-                        </FormHelperText>
+                      <FormHelperText
+                        fontSize={{base: "xs", md: "sm"}}
+                        color="gray.500"
+                        mt={"-4px"}
+                      >
+                        *ยินยอมให้จัดเก็บข้อมูลเพื่อใช้ประโยชน์ในการจัดกิจกรรมรวมทั้งอนุญาตให้ถ่ายภาพนิ่ง
+                        ภาพเคลื่อนไหวหรือการถ่ายทอดสด
+                        เพื่อใช้ในการประชาสัมพันธ์และเผยแพร่ทางช่องทางการสื่อสารต่าง
+                        ๆ
+                      </FormHelperText>
                       <Checkbox
                         id={STUDENT_INFORMATION.POLICY_CONFIRM}
                         name={STUDENT_INFORMATION.POLICY_CONFIRM}
                         // fontWeight="500"
                         defaultChecked={values.student_policy_confirm}
                         mt={4}
+                        size={{base: "md", md: "md"}}
                       >
                         ยินยอม
                       </Checkbox>
@@ -525,6 +523,7 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
                       zIndex={100}
                       isDisabled
                       w={20}
+                      py={6}
                     >
                       ก่อนหน้า
                     </Button>
@@ -536,6 +535,7 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
                       size={{ base: "sm", md: "md" }}
                       zIndex={100}
                       w={20}
+                      py={6}
                     >
                       ต่อไป
                     </Button>
@@ -554,7 +554,7 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
           <HStack w={"100%"}>
             <Skeleton height={6} w={"100%"} borderRadius={"lg"} />
           </HStack>
-          <VStack w={"100%"} mt={4}>
+          <VStack w={"100%"} mt={4} spacing={4}>
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
@@ -564,8 +564,8 @@ const BasicInformation = ({ activeStep, goToNext, goToPrevious }: Props) => {
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
             <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
-            <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
-            <Skeleton height={16} w={"100%"} borderRadius={"lg"} />
+            {/* <Skeleton height={16} w={"100%"} borderRadius={"lg"} /> */}
+            {/* <Skeleton height={16} w={"100%"} borderRadius={"lg"} /> */}
           </VStack>
         </VStack>
       )}

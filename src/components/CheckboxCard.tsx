@@ -109,7 +109,7 @@ const CustomCheckbox = ({
         zIndex={100}
       >
         <input {...getInputProps()} hidden />
-        <Box h={"100px"} w={"100px"}>
+        <Box h={{base: "80px", md: "100px"}} w={{base: "80px", md: "100px"}}>
           <Image
             src={imgCoverRef}
             alt={event_name}

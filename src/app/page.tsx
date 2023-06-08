@@ -142,7 +142,7 @@ export default function Home() {
           <ModalCloseButton top={4} right={4} />
           <ModalBody>
             <Text>
-            ท่านกำลังใช้งานเว็บไซต์ผ่าน Browser ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน Browser เพื่อให้สามารถลงทะเบียนได้
+            คุณกำลังใช้งานเว็บไซต์ผ่าน Browser ที่ไม่รองรับการทำงานของฟังก์ชันสร้าง E-Ticket กรุณาเปลี่ยน Browser เพื่อให้สามารถสร้าง E-Ticket ได้
             </Text>
             <Text fontSize={"md"} mt={4} color="#1d1d1f" fontWeight={600}>Browser ที่แนะนำ</Text>
             <HStack mt={2} spacing={4}>
@@ -167,7 +167,7 @@ export default function Home() {
           justifyContent="center"
           alignItems="center"
           spacing={{ base: 4, md: 8 }}
-          ml={{ base: 0, md: 1 }}
+          // ml={{ base: 0, md: 1 }}
           display={{ base: activeStep > 1 ? "none" : "flex", md: "flex" }}
         >
           <img
@@ -197,7 +197,7 @@ export default function Home() {
         <Container
           // ANCHOR : set width and height
           maxW={"500px"}
-          h={{ base: "1200px", md: "1000" }}
+          h={{ base: activeStep === 4 ? "700px" : activeStep === 3 ? "1000px" : activeStep === 2 ? "1100px" : "1250px", md: "1100px" }}
           bg="white"
           borderRadius="2xl"
           mt={{ base: 4, md: 8 }}

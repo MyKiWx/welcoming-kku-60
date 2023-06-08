@@ -7,7 +7,7 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
 import { mode, transparentize } from "@chakra-ui/theme-tools";
 const baseStyle = defineStyle({
     lineHeight: "1.2",
-    borderRadius: "md",
+    borderRadius: "xl",
     fontWeight: "semibold",
     transitionProperty: "common",
     transitionDuration: "faster",

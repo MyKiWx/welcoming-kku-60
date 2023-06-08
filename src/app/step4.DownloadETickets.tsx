@@ -132,82 +132,6 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const ticket_start_time = localStorage.getItem("ticket_start_time");
-  //     const ticket_end_time = localStorage.getItem("ticket_start_time");
-  //     if (!ticket_start_time && !ticket_end_time) {
-  //       const currentTimeStart = new Date();
-  //       const currentTimeEnd = new Date();
-  //       currentTimeStart.setMinutes(currentTimeStart.getMinutes());
-  //       currentTimeEnd.setMinutes(currentTimeEnd.getMinutes() + 15);
-  //       localStorage.setItem(
-  //         "ticket_start_time",
-  //         JSON.stringify(currentTimeStart)
-  //       );
-  //       localStorage.setItem("ticket_end_time", JSON.stringify(currentTimeEnd));
-  //     }
-  //   }
-  // }, []);
-
-  // const [ticket_start_time, setTicket_start_time] = useState<Date>(() => {
-  //   if (typeof window !== "undefined") {
-  //     const A = localStorage.getItem(`ticket_start_time`);
-  //     if (A) {
-  //       return new Date(JSON.parse(A));
-  //     }
-  //   }
-  //   return new Date();
-  // });
-  // const [ticket_end_time, setTicket_end_time] = useState<Date>(() => {
-  //   if (typeof window !== "undefined") {
-  //     const A = localStorage.getItem(`ticket_end_time`);
-  //     if (A) {
-  //       return new Date(JSON.parse(A));
-  //     }
-  //   }
-  //   return new Date();
-  // });
-  // Output the result in an element with id="demo"
-  // const countDown = document.getElementById("countDown");
-
-  // // const loaded = useLoaded()
-
-  // const [distance, setDistance] = useState( ticket_end_time.getTime() - ticket_start_time.getTime())
-
-  // function counter() {
-  //   const count = setInterval(() => {
-  //     setDistance(distance - 1 )
-  //     // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //     // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //     if (countDown !== null) {
-  //       // countDown.innerHTML = minutes + " นาที " + seconds + " วินาที";
-  //       console.log(distance)
-  //       // console.log(minutes)
-  //       if (distance < 0) {
-  //         clearInterval(count);
-  //         countDown.innerHTML = "EXPIRED";
-  //       }
-  //     }
-  //   }, 1000);
-  // }
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setDistance(distance - 1 )
-  //   }, 1000)
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(distance)
-  // }, [distance]);
-
-  // const [days, hours, minutes, seconds] = useCountdown({
-  //   ticket_start_time: ticket_start_time,
-  //   ticket_end_time: ticket_end_time,
-  // });
-
-  // console.log(seconds);
-
   return (
     <>
       <VStack h={"100%"} justifyContent="space-between">
@@ -308,7 +232,7 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
               >
                 <Icon as={GiTicket} fontSize={"3xl"} />
               </VStack>
-              <Text>กิจกรรมนักศึกษาใหม่ปุญน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง</Text>
+              <Text>กิจกรรมนักศึกษาใหม่ปุญญฺน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง</Text>
               <VStack h={"100%"} justifyContent={"center"} px={1}>
                 <Button
                   onClick={() => handleDownloadTicketC()}
@@ -352,7 +276,7 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
                 </Button>
               </VStack>
             </HStack>
-            <HStack mt={4} display={{base: "none", md: "flex"}}>
+            <HStack mt={4} display={{ base: "none", md: "flex" }}>
               <Button
                 leftIcon={<FaFileDownload />}
                 onClick={() => handleDownloadTicketAll()}
@@ -360,13 +284,6 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
                 ดาวน์โหลดทั้งหมด
               </Button>
             </HStack>
-            <VStack mt={4}>
-              <Text>สามารถดาวน์โหลด Qr code ได้อีก</Text>
-              <Text fontSize="2xl" id="countDown">
-                15 นาที 15 วินาที
-              </Text>
-              <Text>ก่อนที่ Browser จะรีเซ็ต</Text>
-            </VStack>
           </VStack>
           <HStack justifyContent={"space-between"} w={"100%"}>
             <Button
@@ -374,6 +291,7 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
               onClick={goToPrevious}
               size={{ base: "sm", md: "md" }}
               w={20}
+              py={6}
               isDisabled
             >
               ก่อนหน้า
@@ -386,6 +304,7 @@ const DownloadETickets = ({ activeStep, goToNext, goToPrevious }: Props) => {
               size={{ base: "sm", md: "md" }}
               onClick={goToNext}
               w={20}
+              py={6}
             >
               ต่อไป
             </Button>

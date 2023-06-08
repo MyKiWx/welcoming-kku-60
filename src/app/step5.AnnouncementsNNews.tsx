@@ -12,6 +12,7 @@ import {
   Icon,
   Switch,
   Checkbox,
+  Image
 } from "@chakra-ui/react";
 
 import "./page.module.css";
@@ -27,7 +28,6 @@ type Props = {
   goToPrevious(): void;
 };
 const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
-
   const {
     isOpen: stepIsOpen,
     onOpen: stepOnOpen,
@@ -38,8 +38,8 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
       <HStack display={activeStep == 3 ? "none" : "flex"}>
         {[1, 2, 3, 4, 5].map((i, _) => (
           <Box
-          w={{ base: 2, md: 6 }}
-          h={{base: 2, md: 1}}
+            w={{ base: 2, md: 6 }}
+            h={{ base: 2, md: 1 }}
             bg={activeStep >= i ? "blue.500" : "gray.200"}
             borderRadius="full"
             key={_}
@@ -50,26 +50,44 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
   };
   return (
     <>
-    <VStack h={"100%"} justifyContent="space-between">
-      <HeaderContent
-        title={"ติดตามข่าวประชาสัมพันธ์"}
-        title2={"กิจกรรมต้อนรับนักศึกษาใหม่"}
-      />
-      <VStack
+      <VStack h={"100%"} justifyContent="space-between">
+        <HeaderContent
+          title={"ติดตามข่าวประชาสัมพันธ์"}
+          title2={"กิจกรรมต้อนรับนักศึกษาใหม่"}
+        />
+        <VStack
           mt={{ base: 4, md: 4 }}
           spacing={4}
           flex={1}
           justifyContent={"space-between"}
           w={"100%"}
         >
-          <VStack w={"100%"} spacing={6}></VStack>
+          <VStack w={"100%"} spacing={6}>
+
+          <Text
+            color="#1d1d1f"
+            fontWeight={500}
+            fontSize="xl"
+          >
+          Line : @kkusu
+          </Text>
+
+          <Box h={{base: "80px", md: "200px"}} w={{base: "80px", md: "200px"}}>
+          <Image
+            src={"/linesu.png"}
+            alt={"line su"}
+            h="full"
+            borderRadius="lg"
+          />
+        </Box>
+          </VStack>
           <HStack justifyContent={"space-between"} w={"100%"}>
             <Button
               variant="ghost"
               onClick={goToPrevious}
               size={{ base: "sm", md: "md" }}
               w={20}
-              
+              py={6}
             >
               ก่อนหน้า
             </Button>
@@ -82,18 +100,18 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
               onClick={goToNext}
               w={20}
               isDisabled
+              py={6}
             >
               ต่อไป
             </Button>
           </HStack>
         </VStack>
       </VStack>
-   </>
-  )
-}
+    </>
+  );
+};
 
-export default AnnouncementsNNews
-
+export default AnnouncementsNNews;
 
 // const clearLocalStorage = () => {
 //   if (typeof window !== "undefined") {

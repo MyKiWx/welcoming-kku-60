@@ -43,8 +43,8 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
       <HStack display={activeStep == 3 ? "none" : "flex"}>
         {[1, 2, 3, 4, 5].map((i, _) => (
           <Box
-          w={{ base: 2, md: 6 }}
-          h={{base: 2, md: 1}}
+            w={{ base: 2, md: 6 }}
+            h={{ base: 2, md: 1 }}
             bg={activeStep >= i ? "blue.500" : "gray.200"}
             borderRadius="full"
             key={_}
@@ -78,7 +78,10 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
   ) => {
     setShuttle_bus_isChecked(isChecked);
     if (typeof window !== "undefined") {
-      localStorage.setItem(`shuttle_bus_isChecked`, isChecked ? "checked" : "disable");
+      localStorage.setItem(
+        `shuttle_bus_isChecked`,
+        isChecked ? "checked" : "disable"
+      );
     }
   };
 
@@ -116,7 +119,7 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
             <CustomCheckbox
               event_type={"C"}
               event_name={
-                "กิจกรรมนักศึกษาใหม่ปุญน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง"
+                "กิจกรรมนักศึกษาใหม่ปุญญฺน้อมใจศรัทธาองค์เจ้าพ่อมอดินแดง"
               }
               imgCoverRef={"event_3.png"}
               event_start_date={"17 มิถุนายน 2566"}
@@ -145,7 +148,7 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
 
           {/* ANCHOR : Heading 3 */}
           <HStack px={2} w={"100%"}>
-            <Text fontWeight={600} fontSize="lg" color={"#1d1d1f"}>
+            <Text fontWeight={600} fontSize={{base: "md", md: "lg"}} color={"#1d1d1f"}>
               ต้องการใช้รถส่วนกลางสำหรับเดินทางกลับหรือไม่?
             </Text>
           </HStack>
@@ -161,8 +164,10 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
                 ต้องการ
               </Checkbox>
             </HStack>
-            <Text fontSize="sm" color="gray.500">
-              *หมายเหตุ ในกิจกรรมวันที่ 12, 17 และ 18 มิถุนายน 2566 กิจกรรมจะเสร็จสิ้นตามเวลาที่กำหนดผู้จัดจึงได้เตรียมรถขนส่งส่วนกลาง สำหรับรับส่งนักศึกษาไปยังหอพักส่วนกลางและหอใน
+            <Text fontSize={{base: "xs", md: "sm"}} color="gray.500">
+              *หมายเหตุ ในกิจกรรมวันที่ 12, 17 และ 18 มิถุนายน 2566
+              กิจกรรมจะเสร็จสิ้นตามเวลาที่กำหนดผู้จัดจึงได้เตรียมรถขนส่งส่วนกลาง
+              สำหรับรับส่งนักศึกษาไปยังหอพักส่วนกลางและหอใน
             </Text>
           </VStack>
         </VStack>
@@ -171,7 +176,8 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
             variant="ghost"
             onClick={goToPrevious}
             size={{ base: "sm", md: "md" }}
-                                  w={20}
+            w={20}
+            py={6}
           >
             ก่อนหน้า
           </Button>
@@ -182,7 +188,8 @@ const ChooseEvents = ({ activeStep, goToNext, goToPrevious }: Props) => {
             isLoading={stepIsOpen}
             size={{ base: "sm", md: "md" }}
             onClick={handleDelayedClick}
-                                  w={20}
+            w={20}
+            py={6}
           >
             ต่อไป
           </Button>
