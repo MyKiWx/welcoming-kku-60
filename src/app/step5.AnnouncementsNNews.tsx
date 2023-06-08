@@ -82,6 +82,10 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
             </Box>
             <Divider />
             <Box>
+              <Text mt={2}>
+                นักศึกษาที่สนใจเข้าร่วมกิจกรรม Welcome KKU Freshmen โดย
+                มหาวิทยาลัยขอนแก่น วันที่ 15 มิ.ย. 2566 สามารถจองเวลารอบได้ที่
+              </Text>
               <a href="https://sac-old.kku.ac.th/q/">
                 <Image
                   src={"/sac-freshmen.jpg"}
@@ -93,13 +97,9 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
                 />
               </a>
               <Text mt={2} color="blue">
-              <a href="https://sac-old.kku.ac.th/q/">
-                @กองพัฒนาศึกษาและศิษย์เก่าสัมพันธ์
-              </a>
-              </Text>
-              <Text mt={2}>
-                นักศึกษาที่สนใจเข้าร่วมกิจกรรม Welcome KKU Freshmen โดย
-                มหาวิทยาลัยขอนแก่น วันที่ 15 มิ.ย. 2566 สามารถจองเวลารอบได้ที่
+                <a href="https://sac-old.kku.ac.th/q/">
+                  @กองพัฒนาศึกษาและศิษย์เก่าสัมพันธ์
+                </a>
               </Text>
             </Box>
           </VStack>
