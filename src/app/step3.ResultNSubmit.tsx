@@ -335,11 +335,11 @@ const ResultNSubmit = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   value: JSON.parse(student_food_type),
                 },
                 {
-                  title: "ยาที่แพ้",
+                  title: "อาหารที่แพ้",
                   value: JSON.parse(student_foodallergic),
                 },
                 {
-                  title: "อาหารที่แพ้",
+                  title: "ยาที่แพ้",
                   value: JSON.parse(student_drug_allergic),
                 },
                 {
