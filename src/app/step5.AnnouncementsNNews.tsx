@@ -72,7 +72,7 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
           Line : @kkusu
           </Text>
 
-          <Box h={{base: "80px", md: "200px"}} w={{base: "80px", md: "200px"}}>
+          <Box h={{base: "200px", md: "200px"}} w={{base: "200px", md: "200px"}}>
           <Image
             src={"/linesu.png"}
             alt={"line su"}
