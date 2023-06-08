@@ -218,6 +218,8 @@ export default function Home() {
                 ? "1000px"
                 : activeStep === 2
                 ? "1100px"
+                : activeStep === 5 
+                ? "800px"
                 : "1250px",
             md: "1100px",
           }}

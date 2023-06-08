@@ -12,7 +12,7 @@ import {
   Icon,
   Switch,
   Checkbox,
-  Image
+  Image,
 } from "@chakra-ui/react";
 
 import "./page.module.css";
@@ -63,25 +63,45 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
           w={"100%"}
         >
           <VStack w={"100%"} spacing={6}>
+            <Text color="#1d1d1f" fontWeight={500} fontSize="xl">
+              Line : @kkusu
+            </Text>
 
-          <Text
-            color="#1d1d1f"
-            fontWeight={500}
-            fontSize="xl"
-          >
-          Line : @kkusu
-          </Text>
-
-          <Box h={{base: "200px", md: "200px"}} w={{base: "200px", md: "200px"}}>
-          <a href="https://lin.ee/AiB0hoP">
-          <Image
-            src={"/linesu.png"}
-            alt={"line su"}
-            h="full"
-            borderRadius="lg"
-          />
-          </a>
-        </Box>
+            <Box
+              h={{ base: "200px", md: "200px" }}
+              w={{ base: "200px", md: "200px" }}
+            >
+              <a href="https://lin.ee/AiB0hoP">
+                <Image
+                  src={"/linesu.png"}
+                  alt={"line su"}
+                  h="full"
+                  borderRadius="lg"
+                />
+              </a>
+            </Box>
+            <Divider />
+            <Box>
+              <a href="https://sac-old.kku.ac.th/q/">
+                <Image
+                  src={"/sac-freshmen.jpg"}
+                  alt={"line su"}
+                  h="full"
+                  borderRadius="lg"
+                  height={{ base: "140px", md: "180px" }}
+                  // height={{ base: "200px", md: "200px" }}
+                />
+              </a>
+              <Text mt={2} color="blue">
+              <a href="https://sac-old.kku.ac.th/q/">
+                @กองพัฒนาศึกษาและศิษย์เก่าสัมพันธ์
+              </a>
+              </Text>
+              <Text mt={2}>
+                นักศึกษาที่สนใจเข้าร่วมกิจกรรม Welcome KKU Freshmen โดย
+                มหาวิทยาลัยขอนแก่น วันที่ 15 มิ.ย. 2566 สามารถจองเวลารอบได้ที่
+              </Text>
+            </Box>
           </VStack>
           <HStack justifyContent={"space-between"} w={"100%"}>
             <Button
