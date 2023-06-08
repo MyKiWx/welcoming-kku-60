@@ -82,7 +82,7 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
             </Box>
             <Divider />
             <Box>
-              <Text mt={2}>
+              <Text>
                 นักศึกษาที่สนใจเข้าร่วมกิจกรรม Welcome KKU Freshmen โดย
                 มหาวิทยาลัยขอนแก่น วันที่ 15 มิ.ย. 2566 สามารถจองเวลารอบได้ที่
               </Text>
@@ -94,6 +94,7 @@ const AnnouncementsNNews = ({ activeStep, goToNext, goToPrevious }: Props) => {
                   borderRadius="lg"
                   height={{ base: "140px", md: "180px" }}
                   // height={{ base: "200px", md: "200px" }}
+                  mt={2}
                 />
               </a>
               <Text mt={2} color="blue">
