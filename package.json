@@ -1,7 +1,7 @@
 {
   "name": "su-2",
   "version": "0.1.0",
-  "description": "star background testing commit",
+  "description": "star background testing commit2",
   "private": true,
   "scripts": {
     "dev": "next dev",
